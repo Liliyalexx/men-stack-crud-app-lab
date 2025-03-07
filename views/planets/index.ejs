@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<<!-- views/planets/index.ejs -->
+
+<body>
+    <h1>All planets</h1>
+    <ul>
+      <% planets.forEach(planet => { %>
+        <li><%= planet.name %></li>
+      <% }); %>
+    </ul>
+  </body>
+  
+  
+</html>
