@@ -1,0 +1,37 @@
+<!-- views/planets/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= planet.name %></title> <!-- Dynamic title based on planet name -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+ <!-- views/planets/show.ejs -->
+
+<body>
+    <h1><%= planet.name %></h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="/planets"> Back to planets</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Conditional rendering based on planet's readiness -->
+    <% if (planet.isReadyToObserve) { %>
+      <p>This planet is ready to observe!</p>
+    <% } else { %>
+      <p>This planet is not ready to observe!</p>
+    <% } %>
+    <!--DELETE-->
+    <form action="/planets/<%=planet._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= planet.name %></button>
+      </form>
+      <a href="/planets/<%= planet._id %>/edit">Edit <%= planet.name %></a>
+
+      <a href="/planets">Back to planets</a>
+  </body>
+  
+</html>

@@ -1,0 +1,27 @@
+<!-- views/planets/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Edit a planet</title>
+  </head>
+  <body>
+    <!-- update the header -->
+    <h1>Edit <%= planet.name %></h1>
+   <!-- updated form -->
+<form action="/planets/<%=planet._id%>?_method=PUT" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= planet.name %>" />
+    <label for="isReadyToObserve">Ready to Observe?</label>
+    <input type="checkbox" name="isReadyToObserve" id="isReadyToObserve" <% if(planet.isReadyToObserve) {%> checked <%}  %> >
+  
+    <button type="submit">Edit planet</button>
+  </form>
+  
+    <a href="/planets">Back to planets</a>
+  </body>
+  
+</html>
