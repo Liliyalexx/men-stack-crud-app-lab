@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/style/style.css" />
+        <title>Document</title>
 </head>
 <!-- views/planets/index.ejs -->
 
 <body>
+    <div class="index-header-div"></div>
     <h1>All planets</h1>
     <nav>
         <ul>
             <li>
-                <a href="/planets/new" > Add new Planet</a>
+                <a class="add-planet"href="/planets/new" > Add new Planet</a>
             </li>
         </ul>
     </nav>
+</div>
     <ul>
       <% planets.forEach(planet => { %>
         <li>
-            <a href="/planets/<%= planet._id %>"> 
+            <a class = "planet-cards" href="/planets/<%= planet._id %>"> 
                 <%= planet.name %>
             </a>
+              <!-- index.ejs fruits -->
+              <a class="planets-index-link" href="/planets">Browse Planets</a>
+
             </li>
       <% }); %>
     </ul>

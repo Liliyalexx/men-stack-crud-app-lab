@@ -5,23 +5,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Edit a planet</title>
+    <link rel="stylesheet" href="/style/style.css" />
+        <title>Edit a planet</title>
   </head>
   <body>
     <!-- update the header -->
     <h1>Edit <%= planet.name %></h1>
-   <!-- updated form -->
-<form action="/planets/<%=planet._id%>?_method=PUT" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" name="name" value="<%= planet.name %>" />
-    <label for="isReadyToObserve">Ready to Observe?</label>
-    <input type="checkbox" name="isReadyToObserve" id="isReadyToObserve" <% if(planet.isReadyToObserve) {%> checked <%}  %> >
-  
-    <button type="submit">Edit planet</button>
-  </form>
-  
-    <a href="/planets">Back to planets</a>
+    <!-- updated form -->
+    <form action="/planets/<%=planet._id%>?_method=PUT" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= planet.name %>" />
+      <div class="checkbox-div">
+        <label for="isReadyToObserve">Ready to Observe?</label>
+        <input
+          type="checkbox"
+          name="isReadyToObserve"
+          id="isReadyToObserve"
+          <%
+          if(planet.isReadyToObserve)
+          {%
+        />
+        checked <%} %> >
+      </div>
+      <button type="submit">Edit planet</button>
+    </form>
+
+    <!-- edit.ejs / show.ejs -->
+
+    <a class="planets-index-link" href="/planets">
+      <div class="index-link-text">Back to planets</div>
+    </a>
   </body>
-  
 </html>

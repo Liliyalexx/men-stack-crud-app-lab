@@ -6,11 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= planet.name %></title> <!-- Dynamic title based on planet name -->
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/style/style.css" />
   </head>
  <!-- views/planets/show.ejs -->
 
 <body>
+    <div class = "planet-details">
     <h1><%= planet.name %></h1>
     <nav>
         <ul>
@@ -25,13 +26,21 @@
     <% } else { %>
       <p>This planet is not ready to observe!</p>
     <% } %>
-    <!--DELETE-->
-    <form action="/planets/<%=planet._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%= planet.name %></button>
-      </form>
-      <a href="/planets/<%= planet._id %>/edit">Edit <%= planet.name %></a>
 
-      <a href="/planets">Back to planets</a>
+    <!--DELETE-->
+    <div class="planet-actions">
+    <form action="/planets/<%=planet._id%>?_method=DELETE" method="POST">
+        <button class="delete-button" type="submit">Delete <%= planet.name %></button>
+      </form>
+      <a class="edit-link" href="/planets/<%= planet._id %>/edit">Edit <%= planet.name %></a>
+    </div>
+</div>
+      <!-- edit.ejs / show.ejs -->
+
+ <a class="planets-index-link" href="/planets">
+    <div class="index-link-text">Back to planets</div>
+  </a>
+ 
   </body>
   
 </html>

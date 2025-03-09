@@ -4,33 +4,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create a planet</title>
   </head>
   <body>
-    <h1>Create a New planets!</h1>
+    <h1>Create a New Planet!</h1>
     <nav>
         <ul>
             <li>
-                <a href="/planet">
+                <a href="/planets">
                   Back to planets
                 </a>
             </li>
         </ul>
     </nav>
-    <fieldset aria-labelledby="message-legend">
+    <!-- <fieldset aria-labelledby="message-legend"> -->
     <form action="/planets" method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" />
-        <!-- <label for="description">Description:</label> -->
-        <!-- <input type="message" name="description" id="message" /> -->
-            <legend id="message-legend">Description</legend>
+        <label for="description">Description:</label>
+        <input type="message" name="description" id="message" />
+        <legend id="message-legend">Description</legend>
         <textarea id="message" required maxLength="100"></textarea>
+        <div class="checkbox-div">
         <label for="isReadyToObserve">Ready to Observe?</label>
         <input type="checkbox" name="isReadyToObserve" id="isReadyToObserve" />
-    
+        </div>
         <button type="submit">Add planet</button>
       </form>
-    </fieldset>
+    <!-- </fieldset> -->
   </body>
 </html>

@@ -16,15 +16,13 @@ const app = express();
 dotenv.config();
 
 //body parser middleware:this function reads the requiest body and decodes it into req.body so we can access from data!
-app.use(express.urlencoded({ extended: false }));
 // Mount it along with our other middleware, ABOVE the routes
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));//reads the "_method query param for information about DELETE and PUT requiests"
-app.use(morgan("dev")); 
- // new code below this line, static asset middleware - used to sent static assests(CSS, Img, Dom manipulation, JS)
- //app.use(express.static("public"));
-  // new code below this line
-
+// app.use(morgan("dev")); 
+ // static asset middleware - used to sent static assests(CSS, Img, Dom manipulation, JS)
+ app.use(express.static("public"));
+ 
 
 //home page
 
@@ -53,7 +51,6 @@ req.body.isReadyToObserve = !!req.body.isReadyToObserve;
 //index route for planets - sends a page that lists add planets from the database
 app.get('/planets', async(req, res) => {
     const allPlanets = await Planet.find({});
-    console.log(allPlanets);
     res.render('planets/index.ejs', {planets:allPlanets});
 
 })
@@ -78,12 +75,12 @@ app.get('/planets/:planetId/edit', async(req, res) => {
     const foundPlanet = await Planet.findById(req.params.planetId);
     res.render("planets/edit.ejs", {
         planet:foundPlanet,
-    })
-})
+    });
+});
 
 //update route -use to capture edit form submissions from the client and SEND TO MONGODB
 app.put("/planets/:planetId", async (req, res)=> {
-    req.body.isReadyToObserve= !!req.body.isReadyToObserve;
+    req.body.isReadyToObserve = !!req.body.isReadyToObserve;
     await Planet.findByIdAndUpdate(req.params.planetId, req.body);
     res.redirect(`/planets/${req.params.planetId}`);
 });
@@ -95,6 +92,10 @@ mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
   });
+
+  mongoose.connection.on('error', (error) => {
+    console.log(`An errorconnectiong to MongoDB has occured: ${error}`)
+})
 
 
 app.listen(port, () => {
