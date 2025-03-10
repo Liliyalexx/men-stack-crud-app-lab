@@ -11,6 +11,12 @@
  <!-- views/planets/show.ejs -->
 
 <body>
+      <!-- Video Background -->
+      <video id="background-video" autoplay muted loop playsinline>
+        <source src="/videos/solar.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+  
     <div class = "planet-details">
     <h1><%= planet.name %></h1>
     <nav>
@@ -20,6 +26,11 @@
             </li>
         </ul>
     </nav>
+  <!-- Display planet image -->
+<img src="<%= planet.image %>" alt="<%= planet.name %>" class="planet-image" />
+<!-- Display planet description -->
+<p><%= planet.description %></p>
+
     <!-- Conditional rendering based on planet's readiness -->
     <% if (planet.isReadyToObserve) { %>
       <p>This planet is ready to observe!</p>
@@ -32,11 +43,10 @@
     <form action="/planets/<%=planet._id%>?_method=DELETE" method="POST">
         <button class="delete-button" type="submit">Delete <%= planet.name %></button>
       </form>
+         <!-- edit.ejs / show.ejs -->
       <a class="edit-link" href="/planets/<%= planet._id %>/edit">Edit <%= planet.name %></a>
     </div>
 </div>
-      <!-- edit.ejs / show.ejs -->
-
  <a class="planets-index-link" href="/planets">
     <div class="index-link-text">Back to planets</div>
   </a>

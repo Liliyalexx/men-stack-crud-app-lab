@@ -21,12 +21,14 @@
     </nav>
     <!-- <fieldset aria-labelledby="message-legend"> -->
     <form action="/planets" method="POST">
+
+       
         <label for="name">Name:</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" required />
         <label for="description">Description:</label>
-        <input type="message" name="description" id="message" />
-        <legend id="message-legend">Description</legend>
-        <textarea id="message" required maxLength="100"></textarea>
+        <textarea name="description" id="description" required maxlength="1000"></textarea>
+        <label for="image">Image URL:</label>
+        <input type="url" name="image" id="image" required />
         <div class="checkbox-div">
         <label for="isReadyToObserve">Ready to Observe?</label>
         <input type="checkbox" name="isReadyToObserve" id="isReadyToObserve" />
