@@ -37,15 +37,10 @@ app.get('/planets/new', (req, res) => {
 
 // POST /planets
 app.post("/planets", async (req, res) => {
-//     if(req.body.isReadyToObserve == "on"){
-//         req.body.isReadyToObserve = true;
-//     } else {
-//         req.body.isReadyToObserve = false;
-//     }
-req.body.isReadyToObserve = !!req.body.isReadyToObserve;
-
+    console.log(req.body); 
+    req.body.isReadyToObserve = !!req.body.isReadyToObserve; 
     await Planet.create(req.body);
-   res.redirect("/planets"); // URL path 
+    res.redirect("/planets");
   });
 
 //index route for planets - sends a page that lists add planets from the database
@@ -79,12 +74,24 @@ app.get('/planets/:planetId/edit', async(req, res) => {
 });
 
 //update route -use to capture edit form submissions from the client and SEND TO MONGODB
-app.put("/planets/:planetId", async (req, res)=> {
-    req.body.isReadyToObserve = !!req.body.isReadyToObserve;
-    await Planet.findByIdAndUpdate(req.params.planetId, req.body);
-    res.redirect(`/planets/${req.params.planetId}`);
-});
-
+app.put("/planets/:planetId", async (req, res) => {
+    try {
+      const planetId = req.params.planetId;
+      const updatedData = req.body;
+  
+      // Convert checkbox value to boolean
+      updatedData.isReadyToObserve = !!updatedData.isReadyToObserve;
+  
+      // Update the planet in the database
+      await Planet.findByIdAndUpdate(planetId, updatedData);
+  
+      // Redirect to the updated planet's show page
+      res.redirect(`/planets/${planetId}`);
+    } catch (error) {
+      console.error("Error updating planet:", error);
+      res.status(500).send("Internal Server Error");
+    }
+  });
   // Connect to MongoDB using the connection string in the .env file
 mongoose.connect(process.env.MONGODB_URI);
 
