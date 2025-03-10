@@ -8,7 +8,7 @@ const morgan = require("morgan");
 const Planet = require('./models/planet.js');
 const axios = require("axios");
 
-const port = 3001 || 3003
+const port = 3000 || 3003
 
 //initialize the express application
 
