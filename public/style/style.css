@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 body {
-  background-image: url("/imgs/planet-pic1.jpg"); /* Add your background image */
+  background-image: url("/imgs/planet-pic1.jpg");  
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Roboto", sans-serif; /* Professional font */
+  font-family: "Roboto", sans-serif;  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 100vw;
-  color: #002244; /* Dark blue text color */
+  color: #002244;  
 }
 
 #background-video {
@@ -21,21 +21,21 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -1; /* Ensure the video stays in the background */
+  z-index: -1;  
 }
 
 .content {
-  position: relative; /* Ensure content stays above the video */
-  z-index: 1; /* Bring content to the front */
+  position: relative;  
+  z-index: 1;  
   text-align: center;
-  color: #002244; /* Dark blue text color */
+  color: #002244;  
   
 }
 
 h1 {
-  color: #edeff1; /* Dark blue for headers */
+  color: #edeff1;  
   font-size: 3.6em;
-  font-weight: 700; /* Bold for headers */
+  font-weight: 700;  
 }
 
 footer {
@@ -46,12 +46,12 @@ footer {
   width: 100%;
   text-align: center;
   padding: 10px;
-  color: #002244; /* Dark blue for footer text */
+  color: #002244; 
 }
 
 .planet-pic1 {
-  width: 50px; /* Larger size */
-  height: auto; /* Maintain aspect ratio */
+  width: 50px;  
+  height: auto;  
 }
 
 .planets-index-link {
@@ -59,7 +59,7 @@ footer {
 }
 
 .index-link-text {
-  background-color: #002244; /* Dark blue background */
+  background-color: #002244;  
   color: white;
   font-size: 1.4em;
   width: 10em;
@@ -67,11 +67,11 @@ footer {
   margin: 15px;
   border-radius: 25px;
   text-align: center;
-  box-shadow: 0 5px #001122; /* Darker blue shadow */
+  box-shadow: 0 5px #001122;  
 }
 
 .index-link-text:hover {
-  background-color: #001122; /* Darker blue on hover */
+  background-color: #001122;  
   box-shadow: 0 5px #002244;
 }
 
@@ -86,10 +86,10 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: #ffffff; /* White background for forms */
+  background-color: #ffffff;  
   padding: 20px 30px;
   border-radius: 20px;
-  box-shadow: 5px 6px #002244; /* Dark blue shadow */
+  box-shadow: 5px 6px #002244;  
   margin: 20px 10px;
 }
 
@@ -105,7 +105,7 @@ input {
 button {
   align-self: center;
   margin: 10px 4px 4px 4px;
-  background-color: #002244; /* Dark blue for buttons */
+  background-color: #002244; 
   color: white;
   padding: 5px 10px;
   border-radius: 15px;
@@ -141,7 +141,7 @@ button:active {
 }
 
 .delete-button {
-  background-color: #8b0000; /* Deep red for delete button */
+  background-color: #8b0000; 
   text-transform: uppercase;
   padding: 40px 15px;
   width: 70%;
@@ -151,7 +151,7 @@ button:active {
 }
 
 .delete-button:hover {
-  background-color: #6b0000; /* Darker red on hover */
+  background-color: #6b0000;  
 }
 
 .delete-button:active {
@@ -163,7 +163,7 @@ button:active {
 }
 
 .edit-text {
-  background-color: #002244; /* Dark blue for edit button */
+  background-color: #002244;  
   text-transform: uppercase;
   padding: 40px 15px;
   font-size: 1.3em;
@@ -179,7 +179,7 @@ button:active {
 }
 
 .edit-text:hover {
-  background-color: #001122; /* Darker blue on hover */
+  background-color: #001122;  
 }
 
 .edit-text:active {
@@ -200,24 +200,24 @@ li {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: #002244; /* Dark blue for planet cards */
+  color: #002244;  
   width: 40px;
   height: 70px;
-  background-color: #ffffff; /* White background for cards */
+  background-color: #ffffff;  
   margin: 10px 15px;
   padding: 30px 50px;
   border-radius: 15px;
   align-items: center;
   justify-content: center;
-  border: 2.5px solid #002244; /* Dark blue border */
+  border: 2.5px solid #002244;  
 }
 
 .planet-cards:hover {
-  border: 4px solid #001122; /* Darker blue border on hover */
+  border: 4px solid #001122;  
 }
 
 .planet-cards:active {
-  background-color: #e0e0e0; /* Light gray on active */
+  background-color: #e0e0e0;  
   border: 2.5px solid #002244;
   color: #002244;
 }
@@ -238,25 +238,25 @@ li {
     text-decoration: none;
     width: 6em;
     text-transform: uppercase;
-    background-color: #ffffff; /* White background for better contrast */
-    border: 2px solid #002244; /* Dark blue border */
+    background-color: #ffffff;  
+    border: 2px solid #002244; 
     border-radius: 30px;
-    color: #002244; /* Dark blue text */
+    color: #002244; 
     padding: 10px;
     font-weight: bold;
     font-size: 1.2em;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s, color 0.3s; 
   }
   
   .add-planet:hover {
-    background-color: #002244; /* Dark blue background on hover */
-    color: #ffffff; /* White text on hover */
-    border-color: #002244; /* Dark blue border on hover */
+    background-color: #002244; 
+    color: #ffffff; 
+    border-color: #002244; 
   }
   
   .add-planet:active {
-    background-color: #001122; /* Darker blue on active */
-    color: #ffffff; /* White text on active */
+    background-color: #001122; 
+    color: #ffffff;
   }
 
 img {
@@ -265,13 +265,13 @@ img {
 }
 
 .planet-details {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.9); 
   padding: 20px;
   border-radius: 15px;
   text-align: center;
   max-width: 800px;
   margin: 20px auto;
-  color: #002244; /* Dark blue text */
+  color: #002244; 
 }
 
 .planet-image {
@@ -289,33 +289,33 @@ img {
 }
 
 a {
-  color: #002244; /* Dark blue for links */
-  text-decoration: underline; /* Underline by default */
+  color: #002244;
+  text-decoration: underline; 
   text-align: center;
 }
 
 a:visited {
-  color: #001122; /* Darker blue for visited links */
+  color: #001122; 
 }
 
 a:hover {
-  color: #8b0000; /* Deep red for hover */
-  text-decoration: none; /* Remove underline on hover */
+  color: #8b0000; 
+  text-decoration: none; 
 }
 
 a:active {
-  color: #002244; /* Dark blue for active links */
+  color: #002244; 
 }
 
-/* Override WebKit-specific styles */
+
 a:-webkit-any-link {
-  color: #002244; /* Match your default link color */
+  color: #002244; 
   font-size: 30px;
   text-align: left;
 }
 
 .planets-index-link {
-  margin-left: 50px; /* Adjust the value as needed */
+  margin-left: 50px; 
 }
 
 .planets-main {
@@ -325,7 +325,7 @@ a:-webkit-any-link {
 }
 
 p {
-  color: #002244; /* Dark blue for paragraphs */
+  color: #002244; 
   font-size: 40px;
   display: block;
   margin-block-start: 1em;
@@ -346,22 +346,22 @@ p {
 h2{
     margin-top: 100px;
 }
-/* Inform container styling for paragraph */
+
 .inform-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly dark background */
-    padding: 20px; /* Add some padding */
-    border-radius: 10px; /* Rounded corners */
-    border: 2px solid #fff; /* White border to make it stand out */
-    max-width: 80%; /* Limit width */
-    margin: 20px auto; /* Center the container */
-    text-align: justify; /* Justify the text for better readability */
-    color: white; /* White text color */
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px; 
+    border-radius: 10px; 
+    border: 2px solid #fff; 
+    max-width: 80%; 
+    margin: 20px auto; 
+    text-align: justify; 
+    color: white;
   }
   
-  /* Paragraph styling */
+
   .inform {
-    font-size: 18px; /* Make the font size bigger */
-    line-height: 1.6; /* Better line spacing */
+    font-size: 18px; 
+    line-height: 1.6; 
     margin: 0;
     color: whitesmoke;
     margin-bottom: 20px;
