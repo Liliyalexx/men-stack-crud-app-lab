@@ -310,7 +310,7 @@ a:active {
 a:-webkit-any-link {
   color: #002244; /* Match your default link color */
   font-size: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 .planets-index-link {
@@ -318,7 +318,7 @@ a:-webkit-any-link {
 }
 
 .planets-main {
-  margin-left: 150px;
+  margin-left: 700px;
   margin-right: 20px;
   text-shadow: #a6ccd0 10px;
 }
@@ -334,3 +334,38 @@ p {
   unicode-bidi: isolate;
   text-shadow: #c6c4db;
 }
+
+.nasa-image {
+    width: 50%;
+    max-width: 600px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+h2{
+    margin-top: 100px;
+}
+/* Inform container styling for paragraph */
+.inform-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly dark background */
+    padding: 20px; /* Add some padding */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #fff; /* White border to make it stand out */
+    max-width: 80%; /* Limit width */
+    margin: 20px auto; /* Center the container */
+    text-align: justify; /* Justify the text for better readability */
+    color: white; /* White text color */
+  }
+  
+  /* Paragraph styling */
+  .inform {
+    font-size: 18px; /* Make the font size bigger */
+    line-height: 1.6; /* Better line spacing */
+    margin: 0;
+    color: whitesmoke;
+    margin-bottom: 20px;
+  }
+  .footer{
+    size: 1px;
+    margin-top: 20px;
+  }

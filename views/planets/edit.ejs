@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style/style.css" />
+    <script src="/script.js"></script>
     <title>Edit a planet</title>
   </head>
   <body>
@@ -20,8 +21,8 @@
       <label for="image">Image URL:</label>
       <input type="url" name="image" id="image" value="<%= planet.image %>" required />
 
-      <label for="description">Description:</label>
-      <textarea name="description" id="description" required maxlength="1000"></textarea>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required maxlength="1000"></textarea>
 
       <div class="checkbox-div">
         <label for="isReadyToObserve">Ready to Observe?</label>

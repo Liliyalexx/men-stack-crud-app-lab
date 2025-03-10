@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= planet.name %></title> <!-- Dynamic title based on planet name -->
     <link rel="stylesheet" href="/style/style.css" />
+    <script src="/script.js"></script>
   </head>
  <!-- views/planets/show.ejs -->
 
@@ -43,7 +44,6 @@
     <form action="/planets/<%=planet._id%>?_method=DELETE" method="POST">
         <button class="delete-button" type="submit">Delete <%= planet.name %></button>
       </form>
-         <!-- edit.ejs / show.ejs -->
       <a class="edit-link" href="/planets/<%= planet._id %>/edit">Edit <%= planet.name %></a>
     </div>
 </div>

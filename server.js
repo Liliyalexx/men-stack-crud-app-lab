@@ -6,6 +6,7 @@ const mongoose = require("mongoose"); // require package
 const methodOverride = require("method-override"); 
 const morgan = require("morgan"); 
 const Planet = require('./models/planet.js');
+const axios = require("axios");
 
 const port = 3001 || 3003
 
@@ -26,6 +27,9 @@ app.use(methodOverride("_method"));//reads the "_method query param for informat
 
 //home page
 
+app.get("/api/config", (req, res) => {
+    res.json({ nasaApiKey: process.env.NASA_API_KEY });
+}); 
 app.get('/', (req, res) =>{
     res.render('index.ejs')
 });
@@ -42,6 +46,8 @@ app.post("/planets", async (req, res) => {
     await Planet.create(req.body);
     res.redirect("/planets");
   });
+
+  
 
 //index route for planets - sends a page that lists add planets from the database
 app.get('/planets', async(req, res) => {
@@ -92,6 +98,8 @@ app.put("/planets/:planetId", async (req, res) => {
       res.status(500).send("Internal Server Error");
     }
   });
+
+
   // Connect to MongoDB using the connection string in the .env file
 mongoose.connect(process.env.MONGODB_URI);
 
