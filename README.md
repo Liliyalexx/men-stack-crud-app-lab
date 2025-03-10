@@ -46,9 +46,7 @@ Welcome to the Planets App, a MEN (MongoDB, Express, Node.js) stack application 
 - **Method-override** (for PUT and DELETE requests)
 - **Morgan** (for logging, currently commented out)
 
-## Project Structure
 
-planets-app/ ├── models/ │ └── planet.js # Mongoose schema for planets ├── public/ │ ├── imgs/ # Static images │ ├── js/ │ │ └── script.js # Client-side JavaScript for NASA API integration │ ├── videos/ # Background video files │ └── style/ │ └── style.css # Global styles ├── views/ │ ├── planets/ │ │ ├── edit.ejs # Edit planet page │ │ ├── index.ejs # List of all planets │ │ ├── new.ejs # Add new planet page │ │ └── show.ejs # Planet details page │ └── index.ejs # Homepage ├── .env # Environment variables ├── .gitignore # Files to ignore in Git ├── package.json # Project dependencies and scripts ├── README.md # Project documentation └── server.js # Main server file
 
 ## Setup Instructions
 
@@ -59,9 +57,9 @@ planets-app/ ├── models/ │ └── planet.js # Mongoose schema for pla
 
 ### Steps
 
-1. **Clone the Repository:**
+**Clone the Repository:**
 
-```bash
+
 git clone <repository-url>
 cd planets-app
 
