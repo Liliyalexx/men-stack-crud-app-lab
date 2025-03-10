@@ -1,4 +1,5 @@
 # Planets App Documentation
+[Planets App Live](https://men-stack-crud-app-lab-t2xr.onrender.com/)
 
 Welcome to the Planets App, a MEN (MongoDB, Express, Node.js) stack application designed to help users explore and manage information about planets. This documentation provides an overview of the application's structure, functionality, and setup instructions.
 

@@ -14,16 +14,23 @@ document.addEventListener("DOMContentLoaded", async () => {
       const response = await fetch(apiUrl);
       const data = await response.json();
   
-      console.log("NASA API Response:", data); 
+      console.log("NASA API Response:", data);
+
+         // Check if there's an hdurl, otherwise use the regular url
+    const imageUrl = data.hdurl || data.url;
+
   
-      document.querySelector(".content").innerHTML += `
-      <h2>${data.title}</h2>
-      <img src="${data.url}" alt="${data.title}" class="nasa-image" />
-      <div class="inform-container">
-        <p class="inform">${data.explanation}</p>
-      </div>
-    `;
+      // Display NASA APOD information in the DOM
+      const contentElement = document.querySelector(".content");
+      contentElement.innerHTML += `
+        <h2>${data.title}</h2>
+        <img src="${data.url}" alt="${data.title}" class="nasa-image" />
+        <div class="inform-container">
+          <p class="inform">${data.explanation}</p>
+        </div>
+      `;
     } catch (error) {
       console.error("Error:", error);
     }
   });
+  
