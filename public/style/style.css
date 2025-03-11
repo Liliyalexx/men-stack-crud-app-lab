@@ -416,4 +416,56 @@ h2{
     color: black;
   }
   
-  
+  /* Base button styling for sign-in, sign-up, and sign-out */
+.sign-in-btn,
+.sign-up-btn,
+.sign-out-btn {
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin: 5px;
+  display: inline-block;
+  border: 2px solid transparent;
+}
+
+/* Sign-In Button */
+.sign-in-btn {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  color: #002244; /* Dark blue text */
+  border-color: #002244; /* Dark blue border */
+}
+
+.sign-in-btn:hover {
+  background-color: #002244; /* Dark blue background */
+  color: #ffffff; /* White text */
+  border-color: #002244; /* Dark blue border */
+}
+
+/* Sign-Up Button */
+.sign-up-btn {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  color: #002244; /* Dark blue text */
+  border-color: #002244; /* Dark blue border */
+}
+
+.sign-up-btn:hover {
+  background-color: #002244; /* Dark blue background */
+  color: #ffffff; /* White text */
+  border-color: #002244; /* Dark blue border */
+}
+
+/* Sign-Out Button */
+.sign-out-btn {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  color: #8b0000; /* Dark red text */
+  border-color: #8b0000; /* Dark red border */
+}
+
+.sign-out-btn:hover {
+  background-color: #8b0000; /* Dark red background */
+  color: #ffffff; /* White text */
+  border-color: #8b0000; /* Dark red border */
+}
