@@ -469,3 +469,77 @@ h2{
   color: #ffffff; /* White text */
   border-color: #8b0000; /* Dark red border */
 }
+
+/* Auth Container */
+.auth-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.auth-container h1 {
+    color: #002244; /* Dark blue */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Auth Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form label {
+    font-size: 1.1em;
+    color: #002244; /* Dark blue */
+    text-align: left;
+}
+
+.auth-form input {
+    padding: 10px;
+    border: 2px solid #002244; /* Dark blue */
+    border-radius: 10px;
+    font-size: 1em;
+    color: #002244; /* Dark blue */
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: #8b0000; /* Dark red */
+    outline: none;
+}
+
+/* Auth Button */
+.auth-button {
+    background-color: #002244; /* Dark blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #001122; /* Darker blue */
+}
+
+/* Auth Link */
+.auth-link {
+    color: #8b0000; /* Dark red */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: #6b0000; /* Darker red */
+}
