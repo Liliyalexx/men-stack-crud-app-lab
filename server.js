@@ -7,6 +7,9 @@ const methodOverride = require("method-override");
 const morgan = require("morgan"); 
 const Planet = require('./models/planet.js');
 const axios = require("axios");
+const session = require('express-session');
+const authController = require("./controllers/auth");
+const path = require('path');
 
 const port = 3000 || 3003
 
@@ -23,16 +26,32 @@ app.use(methodOverride("_method"));//reads the "_method query param for informat
 // app.use(morgan("dev")); 
  // static asset middleware - used to sent static assests(CSS, Img, Dom manipulation, JS)
  app.use(express.static("public"));
- 
+ app.use(morgan('dev'));
+ app.use(session({
+    secret: process.env.SESSION_SECRET || "defaultSecret",
+    resave: false,
+    saveUninitialized: false,
+}));
+
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+
+// Specify the directory where your views are located
+app.set('views', path.join(__dirname, 'views'));
+
+app.use("/auth", authController);
 
 //home page
 
 app.get("/api/config", (req, res) => {
     res.json({ nasaApiKey: process.env.NASA_API_KEY });
 }); 
-app.get('/', (req, res) =>{
-    res.render('index.ejs')
-});
+app.get('/', (req, res) => {
+    // Assuming `req.user` contains the authenticated user's data
+    const user = req.user || null; // Set to null if no user is logged in
+    res.render('index', { user }); // Pass the `user` variable to the template
+  });
+
 
 //GET /planets/new
 app.get('/planets/new', (req, res) => {
