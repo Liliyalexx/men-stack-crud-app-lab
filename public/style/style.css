@@ -431,115 +431,149 @@ h2{
   border: 2px solid transparent;
 }
 
-/* Sign-In Button */
 .sign-in-btn {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-  color: #002244; /* Dark blue text */
-  border-color: #002244; /* Dark blue border */
-}
-
-.sign-in-btn:hover {
-  background-color: #002244; /* Dark blue background */
-  color: #ffffff; /* White text */
-  border-color: #002244; /* Dark blue border */
-}
-
-/* Sign-Up Button */
-.sign-up-btn {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-  color: #002244; /* Dark blue text */
-  border-color: #002244; /* Dark blue border */
-}
-
-.sign-up-btn:hover {
-  background-color: #002244; /* Dark blue background */
-  color: #ffffff; /* White text */
-  border-color: #002244; /* Dark blue border */
-}
-
-/* Sign-Out Button */
-.sign-out-btn {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-  color: #8b0000; /* Dark red text */
-  border-color: #8b0000; /* Dark red border */
-}
-
-.sign-out-btn:hover {
-  background-color: #8b0000; /* Dark red background */
-  color: #ffffff; /* White text */
-  border-color: #8b0000; /* Dark red border */
-}
-
-/* Auth Container */
-.auth-container {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
-    margin: 50px auto;
-    text-align: center;
-}
-
-.auth-container h1 {
-    color: #002244; /* Dark blue */
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-/* Auth Form */
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.auth-form label {
-    font-size: 1.1em;
-    color: #002244; /* Dark blue */
-    text-align: left;
-}
-
-.auth-form input {
-    padding: 10px;
-    border: 2px solid #002244; /* Dark blue */
-    border-radius: 10px;
-    font-size: 1em;
-    color: #002244; /* Dark blue */
     background-color: rgba(255, 255, 255, 0.8);
-    transition: border-color 0.3s ease;
-}
-
-.auth-form input:focus {
-    border-color: #8b0000; /* Dark red */
-    outline: none;
-}
-
-/* Auth Button */
-.auth-button {
-    background-color: #002244; /* Dark blue */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.auth-button:hover {
-    background-color: #001122; /* Darker blue */
-}
-
-/* Auth Link */
-.auth-link {
-    color: #8b0000; /* Dark red */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.auth-link:hover {
-    color: #6b0000; /* Darker red */
-}
+    color: #002244;
+    border-color: #002244;
+  }
+  
+  .sign-in-btn:hover {
+    background-color: #002244;
+    color: #ffffff;
+    border-color: #002244;
+  }
+  
+  .sign-up-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #002244;
+    border-color: #002244;
+  }
+  
+  .sign-up-btn:hover {
+    background-color: #002244;
+    color: #ffffff;
+    border-color: #002244;
+  }
+  
+  .sign-out-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #8b0000;
+    border-color: #8b0000;
+  }
+  
+  .sign-out-btn:hover {
+    background-color: #8b0000;
+    color: #ffffff;
+    border-color: #8b0000;
+  }
+  
+  .auth-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      margin: 50px auto;
+      text-align: center;
+  }
+  
+  .auth-container h1 {
+      color: #002244;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+  }
+  
+  .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  }
+  
+  .auth-form label {
+      font-size: 1.1em;
+      color: #002244;
+      text-align: left;
+  }
+  
+  .auth-form input {
+      padding: 10px;
+      border: 2px solid #002244;
+      border-radius: 10px;
+      font-size: 1em;
+      color: #002244;
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: border-color 0.3s ease;
+  }
+  
+  .auth-form input:focus {
+      border-color: #8b0000;
+      outline: none;
+  }
+  
+  .auth-button {
+      background-color: #002244;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  .auth-button:hover {
+      background-color: #001122;
+  }
+  
+  .auth-link {
+      color: #8b0000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+  }
+  
+  .auth-link:hover {
+      color: #6b0000;
+  }
+  
+  .planet-cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #dfe8f1;
+      width: 120px;
+      height: 120px;
+      background-color: #ffffff;
+      background-image: url("/imgs/planet-background.jpg");
+      background-size: cover;
+      background-position: center;
+      margin: 10px;
+      padding: 0;
+      border-radius: 50%;
+      border: 2px solid #002244;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+  }
+  
+  .planet-cards:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      border-color: #1f73c6;
+  }
+  
+  .planet-cards:active {
+      transform: scale(1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .planet-cards h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px rgba(148, 192, 233, 0.8);
+  }
