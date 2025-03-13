@@ -1,8 +1,7 @@
-// Here is where we import modules
-// We begin by loading Express
+
 const express = require('express');
-const dotenv = require("dotenv"); // require package
-const mongoose = require("mongoose"); // require package
+const dotenv = require("dotenv"); 
+const mongoose = require("mongoose"); 
 const methodOverride = require("method-override"); 
 const morgan = require("morgan"); 
 const Planet = require('./models/planet.js');
@@ -13,18 +12,14 @@ const path = require('path');
 
 const port = 3000 || 3003
 
-//initialize the express application
-
 const app = express();
 //config code
 dotenv.config();
 
-//body parser middleware:this function reads the requiest body and decodes it into req.body so we can access from data!
-// Mount it along with our other middleware, ABOVE the routes
+
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method"));//reads the "_method query param for information about DELETE and PUT requiests"
-// app.use(morgan("dev")); 
- // static asset middleware - used to sent static assests(CSS, Img, Dom manipulation, JS)
+app.use(methodOverride("_method"));
+
  app.use(express.static("public"));
  app.use(morgan('dev'));
  app.use(session({
@@ -33,10 +28,10 @@ app.use(methodOverride("_method"));//reads the "_method query param for informat
     saveUninitialized: false,
 }));
 
-// Set the view engine to EJS
+
 app.set('view engine', 'ejs');
 
-// Specify the directory where your views are located
+
 app.set('views', path.join(__dirname, 'views'));
 
 app.use("/auth", authController);
@@ -47,9 +42,9 @@ app.get("/api/config", (req, res) => {
     res.json({ nasaApiKey: process.env.NASA_API_KEY });
 }); 
 app.get('/', (req, res) => {
-    // Assuming `req.user` contains the authenticated user's data
-    const user = req.user || null; // Set to null if no user is logged in
-    res.render('index', { user }); // Pass the `user` variable to the template
+   
+    const user = req.user || null;
+    res.render('index', { user }); 
   });
 
 
@@ -68,14 +63,12 @@ app.post("/planets", async (req, res) => {
 
   
 
-//index route for planets - sends a page that lists add planets from the database
 app.get('/planets', async(req, res) => {
     const allPlanets = await Planet.find({});
     res.render('planets/index.ejs', {planets:allPlanets});
 
 })
 
-//show route - for sending a page with the details for one particular planet
 app.get("/planets/:planetId", async (req, res) =>{
     const foundPlanet = await Planet.findById(req.params.planetId);
     res.render("planets/show.ejs", {planet: foundPlanet});
@@ -98,19 +91,15 @@ app.get('/planets/:planetId/edit', async(req, res) => {
     });
 });
 
-//update route -use to capture edit form submissions from the client and SEND TO MONGODB
 app.put("/planets/:planetId", async (req, res) => {
     try {
       const planetId = req.params.planetId;
       const updatedData = req.body;
   
-      // Convert checkbox value to boolean
       updatedData.isReadyToObserve = !!updatedData.isReadyToObserve;
   
-      // Update the planet in the database
       await Planet.findByIdAndUpdate(planetId, updatedData);
   
-      // Redirect to the updated planet's show page
       res.redirect(`/planets/${planetId}`);
     } catch (error) {
       console.error("Error updating planet:", error);
@@ -119,10 +108,8 @@ app.put("/planets/:planetId", async (req, res) => {
   });
 
 
-  // Connect to MongoDB using the connection string in the .env file
 mongoose.connect(process.env.MONGODB_URI);
 
-// log connection status to terminal on start
 mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
   });
